@@ -4,6 +4,7 @@ import (
 	"context"
 	"flag"
 	"fmt"
+	"time"
 
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/client-go/kubernetes"
@@ -48,5 +49,7 @@ func main() {
 	for _, deployment := range deployments.Items {
 		fmt.Println(deployment.Name)
 	}
+
+	time.Sleep(100 * time.Second) // Sleep for 10 seconds before next iteration
 
 }
